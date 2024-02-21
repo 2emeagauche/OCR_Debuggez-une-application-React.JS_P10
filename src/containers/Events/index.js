@@ -13,6 +13,7 @@ const EventList = () => {
   const { data, error } = useData();
   const [type, setType] = useState();
   const [currentPage, setCurrentPage] = useState(1);
+  (data?.events || []).sort((a,b) => Date.parse(b.date) - Date.parse(a.date))
   const filteredEvents = (data?.events || []
   ).filter((event) => {
     if(type) {
