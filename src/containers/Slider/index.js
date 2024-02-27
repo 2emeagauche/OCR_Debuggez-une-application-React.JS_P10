@@ -24,7 +24,8 @@ const Slider = () => {
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (
-        <Fragment key={(Math.random()*10000).toFixed()}>
+        // eslint-disable-next-line react/no-array-index-key
+        <Fragment key={event.title + idx}>
           <div
             className={`SlideCard SlideCard--${
               index === idx ? "display" : "hide"
@@ -41,9 +42,10 @@ const Slider = () => {
           </div>
           <div className="SlideCard__paginationContainer">
             <div className="SlideCard__pagination">
-              {byDateDesc.map((_, radioIdx) => (
+              {byDateDesc.map((evt, radioIdx) => (
                 <input
-                  key={(Math.random()*10000).toFixed()}
+                  // eslint-disable-next-line react/no-array-index-key
+                  key={evt.title + radioIdx}
                   type="radio"
                   name="radio-button"
                   checked={index === radioIdx}
