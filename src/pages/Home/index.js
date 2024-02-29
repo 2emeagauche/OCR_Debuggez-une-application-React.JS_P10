@@ -116,7 +116,7 @@ const Page = () => {
         </Modal>
       </div>
     </main>
-    <footer className="row">
+    <footer className="row" role="contentinfo">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
         {error && <div>An error occured</div>}
@@ -134,7 +134,8 @@ const Page = () => {
                 label={lastEvent?.type}
               />
             )}
-          </Modal>)}
+          </Modal>
+          )}
       </div>
       <div className="col contact">
         <h3>Contactez-nous</h3>
